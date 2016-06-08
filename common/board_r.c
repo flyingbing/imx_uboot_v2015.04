@@ -782,7 +782,11 @@ init_fnc_t init_sequence_r[] = {
 #ifdef CONFIG_ARCH_EARLY_INIT_R
 	arch_early_init_r,
 #endif
+
+#if !defined(CONFIG_READYGO_BOARD)
 	power_init_board,
+#endif
+
 #ifndef CONFIG_SYS_NO_FLASH
 	initr_flash,
 #endif
